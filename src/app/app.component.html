@@ -1,0 +1,4 @@
+<button (click)="show = !show">{{show ? 'Hide' : 'Show'}}</button>
+<br>
+<button (click)="title = title + '1'">Modify input</button>
+<app-parent *ngIf="show" [title]="title"></app-parent>
