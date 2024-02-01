@@ -1,4 +1,16 @@
-<button (click)="show = !show">{{show ? 'Hide' : 'Show'}}</button>
-<br>
-<button (click)="title = title + '1'">Modify input</button>
-<app-parent *ngIf="show" [title]="title"></app-parent>
+<div style="background-color: rgb(37, 38, 39)">
+    <div class="content" style="margin-left: 10px">
+    <button (click)="show = !show">
+        {{show ? 'Hide Lifecycle Hook Logs' : 'Show Lifecycle Hook Logs'}}
+    </button>
+    &nbsp;&nbsp;
+    <button (click)="title = title + '1'">Modify title</button>
+    <app-parent *ngIf="show" [title]="title"></app-parent>
+
+    <br><br>
+    <button (click)="showInput = !showInput">
+        {{showInput ? 'Hide Input' : 'Show Input'}}
+    </button>
+    <app-inheritor *ngIf="showInput"  [control]="inputControl"></app-inheritor>
+    </div>
+</div>
